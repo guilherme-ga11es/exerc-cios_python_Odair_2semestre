@@ -1,0 +1,272 @@
+# LISTA DE EXERCÍCIOS: ESTRUTURA DE DECISÃO
+
+# Exercício 01: Maior de dois números
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+if num1 > num2:
+    print("O maior é:", num1)
+else:
+    print("O maior é:", num2)
+
+# Exercício 02: Positivo ou Negativo
+valor = float(input("Digite um valor: "))
+if valor >= 0:
+    print("O valor é positivo.")
+else:
+    print("O valor é negativo.")
+
+# Exercício 03: Masculino ou Feminino
+sexo = input("Digite F para Feminino ou M para Masculino: ").upper()
+if sexo == "F":
+    print("F - Feminino")
+elif sexo == "M":
+    print("M - Masculino")
+else:
+    print("Sexo Inválido.")
+
+# Exercício 04: Vogal ou Consoante
+letra = input("Digite uma letra: ").lower()
+if letra in "aeiou":
+    print("É uma vogal.")
+else:
+    print("É uma consoante.")
+
+# Exercício 05: Média de duas notas
+n1 = float(input("Nota 1: "))
+n2 = float(input("Nota 2: "))
+media = (n1 + n2) / 2
+if media == 10:
+    print("Aprovado com Distinção")
+elif media >= 7:
+    print("Aprovado")
+else:
+    print("Reprovado")
+
+# Exercício 06: Maior de três números
+num1 = float(input("Digite o 1º numero: "))
+num2 = float(input("Digite o 2º numero: "))
+num3 = float(input("Digite o 3º numero: "))
+
+if num1 > num2 and num1 > num3:
+    print(num1, "é maior")
+elif num2 > num1 and num2 > num3:
+    print(num2, "é maior")
+else:
+    print(num3, "é maior")
+
+# Exercício 07: Maior e menor de três números
+num1 = float(input("Digite o 1º numero: "))
+num2 = float(input("Digite o 2º numero: "))
+num3 = float(input("Digite o 3º numero: "))
+
+if num1 > num2 and num1 > num3:
+    print(num1, "é maior")
+elif num2 > num1 and num2 > num3:
+    print(num2, "é maior")
+else:
+    print(num3, "é maior")
+
+if num1 < num2 and num1 < num3:
+    print(num1, "é menor")
+elif num2 < num1 and num2 < num3:
+    print(num2, "é menor")
+else:
+    print(num3, "é menor")
+
+# Exercício 08: Produto mais barato
+p1 = float(input("Preço produto 1: "))
+p2 = float(input("Preço produto 2: "))
+p3 = float(input("Preço produto 3: "))
+if p1 < p2 and p1 < p3:
+    print("Compre o produto 1")
+elif p2 < p1 and p2 < p3:
+    print("Compre o produto 2")
+else:
+    print("Compre o produto 3")
+
+# Exercício 09: Ordem decrescente
+num1 = float(input("Digite o 1º numero: "))
+num2 = float(input("Digite o 2º numero: "))
+num3 = float(input("Digite o 3º numero: "))
+
+if num1 > num2 and num2 > num3:
+    print(num1, num2, num3)
+elif num1 > num3 and num3 > num2:
+    print(num1, num3, num2)
+elif num2 > num1 and num1 > num3:
+    print(num2, num1, num3)
+elif num2 > num3 and num3 > num1:
+    print(num2, num3, num1)
+elif num3 > num1 and num1 > num2:
+    print(num3, num1, num2)
+else:
+    print(num3, num2, num1)
+
+# Exercício 10: Turno de estudo
+turno = input("Turno (M-matutino, V-vespertino, N-noturno): ").upper()
+if turno == "M": print("Bom Dia!")
+elif turno == "V": print("Boa Tarde!")
+elif turno == "N": print("Boa Noite!")
+else: print("Valor Inválido!")
+
+# Exercício 11: Reajuste salarial
+salario = float(input("Salário atual: "))
+if salario <= 280: percentual = 20
+elif salario <= 700: percentual = 15
+elif salario <= 1500: percentual = 10
+else: percentual = 5
+aumento = salario * (percentual/100)
+print(f"Salário antes: {salario} | Aumento: {percentual}% | Valor aumento: {aumento} | Novo salário: {salario+aumento}")
+
+# Exercício 12: Folha de Pagamento (IR)
+valor_hora = float(input("Valor da hora: "))
+horas_trabalhadas = float(input("Horas no mês: "))
+salario_bruto = valor_hora * horas_trabalhadas
+if salario_bruto <= 900: ir = 0
+elif salario_bruto <= 1500: ir = 5
+elif salario_bruto <= 2500: ir = 10
+else: ir = 20
+valor_ir = salario_bruto * (ir/100)
+sindicato = salario_bruto * 0.03
+fgts = salario_bruto * 0.11
+total_descontos = valor_ir + sindicato
+print(f"Bruto: {salario_bruto} | IR: {valor_ir} | Sindicato: {sindicato} | FGTS: {fgts} | Líquido: {salario_bruto-total_descontos}")
+
+# Exercício 13: Dia da Semana
+dia = int(input("Digite um número para o dia da semana (1 a 7): "))
+
+if dia == 1:
+    print("Domingo")
+elif dia == 2:
+    print("Segunda")
+elif dia == 3:
+    print("Terça")
+elif dia == 4:
+    print("Quarta")
+elif dia == 5:
+    print("Quinta")
+elif dia == 6:
+    print("Sexta")
+elif dia == 7:
+    print("Sábado")
+else:
+    print("Valor inválido")
+
+# Exercício 14: Conceito Notas
+n1 = float(input("Nota 1: "))
+n2 = float(input("Nota 2: "))
+m = (n1 + n2) / 2
+if m >= 9: conc = "A"
+elif m >= 7.5: conc = "B"
+elif m >= 6: conc = "C"
+elif m >= 4: conc = "D"
+else: conc = "E"
+status = "APROVADO" if conc in "ABC" else "REPROVADO"
+print(f"Média: {m} | Conceito: {conc} | Status: {status}")
+
+# Exercício 15: Triângulos
+l1 = float(input("Lado 1: "))
+l2 = float(input("Lado 2: "))
+l3 = float(input("Lado 3: "))
+if l1+l2 > l3 and l1+l3 > l2 and l2+l3 > l1:
+    if l1 == l2 == l3: print("Equilátero")
+    elif l1 == l2 or l1 == l3 or l2 == l3: print("Isósceles")
+    else: print("Escaleno")
+else: print("Não é um triângulo")
+
+# Exercício 16: Equação 2º Grau
+import math
+a = float(input("A: "))
+if a == 0: print("Não é 2º grau")
+else:
+    b, c = float(input("B: ")), float(input("C: "))
+    delta = b**2 - 4*a*c
+    if delta < 0: print("Sem raízes reais")
+    elif delta == 0: print("Raiz única:", -b/(2*a))
+    else: print("X1:", (-b+math.sqrt(delta))/(2*a), "X2:", (-b-math.sqrt(delta))/(2*a))
+
+# Exercício 17: Ano Bissexto
+ano = int(input("Ano: "))
+if (ano%4==0 and ano%100!=0) or (ano%400==0): print("Bissexto")
+else: print("Não é bissexto")
+
+# Exercício 18: Data Válida
+d, m, a = int(input("Dia: ")), int(input("Mês: ")), int(input("Ano: "))
+valida = False
+if m in [1,3,5,7,8,10,12] and 1<=d<=31: valida = True
+elif m in [4,6,9,11] and 1<=d<=30: valida = True
+elif m == 2:
+    bi = (a%4==0 and a%100!=0) or (a%400==0)
+    if (bi and 1<=d<=29) or (not bi and 1<=d<=28): valida = True
+print("Válida" if valida else "Inválida")
+
+# Exercício 19: Centenas, Dezenas, Unidades
+num = int(input("Num (<1000): "))
+c, d, u = num//100, (num%100)//10, num%10
+print(f"{c} centenas, {d} dezenas e {u} unidades")
+
+# Exercício 20: Média 3 notas
+n1, n2, n3 = float(input("N1: ")), float(input("N2: ")), float(input("N3: "))
+m = (n1+n2+n3)/3
+if m == 10: print("Aprovado com Distinção")
+elif m >= 7: print("Aprovado")
+else: print("Reprovado")
+
+# Exercício 21: Caixa Eletrónico
+saque = int(input("Saque (10-600): "))
+if 10 <= saque <= 600:
+    for nota in [100, 50, 10, 5, 1]:
+        qtd = saque // nota
+        saque %= nota
+        if qtd > 0: print(f"{qtd} nota(s) de R${nota}")
+
+# Exercício 22: Par ou Ímpar
+n = int(input("Número: "))
+print("Par" if n % 2 == 0 else "Ímpar")
+
+# Exercício 23: Inteiro ou Decimal
+n = float(input("Número: "))
+print("Inteiro" if n == round(n) else "Decimal")
+
+# Exercício 24: Operações
+n1, n2 = float(input("N1: ")), float(input("N2: "))
+op = input("Operação (+,-,*,/): ")
+res = eval(f"{n1}{op}{n2}")
+print(f"Resultado: {res}")
+print("Par" if res%2==0 else "Ímpar", "|", "Positivo" if res>0 else "Negativo", "|", "Inteiro" if res==round(res) else "Decimal")
+
+# Exercício 25: Investigação Criminal
+print("Responda S/N")
+p = [input("Telefonou? "), input("Local? "), input("Mora perto? "), input("Devia? "), input("Trabalhou? ")].count('s')
+if p == 2: print("Suspeita")
+elif 3 <= p <= 4: print("Cúmplice")
+elif p == 5: print("Assassino")
+else: print("Inocente")
+
+# Exercício 26: Posto
+litros = float(input("Litros: "))
+tipo = input("A-Álcool / G-Gasolina: ").upper()
+if tipo == 'A':
+    p = 1.90 * (0.97 if litros <= 20 else 0.95)
+else:
+    p = 2.50 * (0.96 if litros <= 20 else 0.94)
+print(f"Total: R${litros*p:.2f}")
+
+# Exercício 27: Fruteira
+morangos = float(input("Kg Morango: "))
+maçãs = float(input("Kg Maçã: "))
+p_mo = 2.50 if morangos <= 5 else 2.20
+p_ma = 1.80 if maçãs <= 5 else 1.50
+total = (morangos*p_mo) + (maçãs*p_ma)
+if (morangos+maçãs) > 8 or total > 25: total *= 0.90
+print(f"Total: R${total:.2f}")
+
+# Exercício 28: Hipermercado Tabajara
+tipo = int(input("1-Filé, 2-Alcatra, 3-Picanha: "))
+kg = float(input("Kg: "))
+cartao = input("Cartão Tabajara (S/N): ").upper()
+preços = {1: (4.9, 5.8), 2: (5.9, 6.8), 3: (6.9, 7.8)}
+p_unit = preços[tipo][0] if kg <= 5 else preços[tipo][1]
+bruto = kg * p_unit
+desc = bruto * 0.05 if cartao == 'S' else 0
+print(f"Total: R${bruto-desc:.2f}")
