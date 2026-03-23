@@ -1,0 +1,130 @@
+# Exercício 1: Mostrar a mensagem 'Alô mundo'
+print("Alô mundo")
+
+# Exercício 2: Pedir um número e mostrar a mensagem
+numero = input("Digite um número: ")
+print(f"O número informado foi {numero}")
+
+# Exercício 3: Pedir dois números e imprimir a soma
+n1 = int(input("Digite o primeiro número: "))
+n2 = int(input("Digite o segundo número: "))
+soma = n1 + n2
+print(f"A soma é: {soma}")
+
+# Exercício 4: Pedir as 4 notas bimestrais e mostrar a média
+nota1 = float(input("Nota 1: "))
+nota2 = float(input("Nota 2: "))
+nota3 = float(input("Nota 3: "))
+nota4 = float(input("Nota 4: "))
+media = (nota1 + nota2 + nota3 + nota4) / 4
+print(f"A média bimestral é: {media}")
+
+# Exercício 5: Converter metros para centímetros
+metros = float(input("Digite a medida em metros: "))
+centimetros = metros * 100
+print(f"Isso dá {centimetros} centímetros.")
+
+# Exercício 6: Pedir o raio de um círculo, calcular e mostrar sua área[
+# Pesquisei que a área é Pi vezes o raio ao quadrado!
+raio = float(input("Digite o raio do círculo: "))
+area_circulo = 3.14159 * (raio ** 2)
+print(f"A área do círculo é: {area_circulo}")
+
+# Exercício 7: Calcular a área de um quadrado e mostrar o dobro
+lado = float(input("Digite o tamanho do lado do quadrado: "))
+area_quadrado = lado ** 2
+dobro_area = area_quadrado * 2
+print(f"A área é {area_quadrado} e o dobro dela é {dobro_area}.")
+
+# Exercício 8: Calcular salário por hora e horas no mês
+valor_hora = float(input("Quanto você ganha por hora? R$ "))
+horas_mes = float(input("Quantas horas você trabalhou no mês? "))
+salario = valor_hora * horas_mes
+print(f"O seu salário neste mês será de R$ {salario}")
+
+# Exercício 9: Converter Fahrenheit para Celsius
+f = float(input("Digite a temperatura em graus Fahrenheit: "))
+c = 5 * ((f - 32) / 9)
+print(f"A temperatura em Celsius é: {c}")
+
+# Exercício 10: Converter Celsius para Fahrenheit
+celsius = float(input("Digite a temperatura em Celsius: "))
+fahrenheit = (celsius * 9/5) + 32
+print(f"A temperatura em Fahrenheit é: {fahrenheit}")
+
+# Exercício 11: Dois inteiros e um real. Fazer várias contas
+int1 = int(input("Digite o primeiro número inteiro: "))
+int2 = int(input("Digite o segundo número inteiro: "))
+real = float(input("Digite um número real: "))
+
+conta_a = (int1 * 2) * (int2 / 2)
+conta_b = (int1 * 3) + real
+conta_c = real ** 3
+
+print(f"Produto do dobro do primeiro com metade do segundo: {conta_a}")
+print(f"Soma do triplo do primeiro com o terceiro: {conta_b}")
+print(f"Terceiro elevado ao cubo: {conta_c}")
+
+# Exercício 12: Converter Gigabytes para Megabytes
+gb = float(input("Digite o valor em Gigabytes (GB): "))
+mb = gb * 1024
+print(f"Isso equivale a {mb} Megabytes (MB).")
+
+# Exercício 13: Converter Gigabytes para Megabytes e Kilobytes
+gb2 = float(input("Digite outro valor em Gigabytes (GB): "))
+mb2 = gb2 * 1024
+kb = mb2 * 1024
+print(f"{gb2} GB equivale a {mb2} MB ou {kb} KB.")
+
+# Exercício 14: Pescador João (multa R$ 4,00 por quilo excedente acima de 50 kg)
+peso_peixes = float(input("Quantos quilos de peixe você pescou? "))
+if peso_peixes > 50:
+    excesso = peso_peixes - 50
+    multa = excesso * 4
+    print(f"Você excedeu {excesso} kg. A multa será de R$ {multa}")
+else:
+    print("Você não excedeu 50 kg. Não tem multa hoje!")
+
+# Exercício 15: Salário com descontos (IR 11%, INSS 8%, Sindicato 5%)
+ganho_hora = float(input("Ganho por hora: R$ "))
+horas_trab = float(input("Horas trabalhadas: "))
+bruto = ganho_hora * horas_trab
+
+ir = bruto * 0.11
+inss = bruto * 0.08
+sindicato = bruto * 0.05
+liquido = bruto - ir - inss - sindicato
+
+print(f"Salário Bruto: R$ {bruto}")
+print(f"Descontos -> IR: R$ {ir} | INSS: R$ {inss} | Sindicato: R$ {sindicato}")
+print(f"Salário Líquido: R$ {liquido}")
+
+# Exercício 16: Loja de tintas simples (1 lata = 18L, cobre 54m2, custa R$80)
+area = float(input("Tamanho da área a ser pintada em m²: "))
+litros_precisos = area / 3
+latas = math.ceil(litros_precisos / 18) 
+preco = latas * 80
+print(f"Você precisará comprar {latas} lata(s). Custará R$ {preco}")
+
+# Exercício 17: Loja de tintas avançada (1 litro cobre 6m2. Lata 18L e galão 3,6L com folga)
+area2 = float(input("Tamanho da área a ser pintada (exercício avançado): "))
+area_com_folga = area2 * 1.10
+litros_precisos2 = area_com_folga / 6
+latas_mistas = int(litros_precisos2 // 18)
+litros_sobra = litros_precisos2 % 18
+galoes_mistos = math.ceil(litros_sobra / 3.6)
+
+preco_misto = (latas_mistas * 80) + (galoes_mistos * 25)
+
+print("A melhor opção misturando tintas é:")
+print(f"Comprar {latas_mistas} lata(s) de 18L e {galoes_mistos} galão(ões) de 3,6L.")
+print(f"O total será de R$ {preco_misto}")
+
+# Exercício 18: Tempo aproximado de download
+tamanho_arquivo = float(input("Tamanho do arquivo em MB: "))
+velocidade_net = float(input("Velocidade da internet em Mbps: "))
+velocidade_MB_por_segundo = velocidade_net / 8 
+tempo_segundos = tamanho_arquivo / velocidade_MB_por_segundo
+tempo_minutos = tempo_segundos / 60
+
+print(f"O download vai demorar cerca de {tempo_minutos:.2f} minutos.")
