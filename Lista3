@@ -1,0 +1,150 @@
+# Exercício 1: Tamanho de strings
+string1 = input("Digite a primeira frase: ")
+string2 = input("Digite a segunda frase: ")
+
+print(f"String 1: '{string1}' (Tamanho: {len(string1)} caracteres)")
+print(f"String 2: '{string2}' (Tamanho: {len(string2)} caracteres)")
+
+if len(string1) == len(string2):
+    print("As duas strings têm o mesmo tamanho.")
+else:
+    print("As duas strings têm tamanhos diferentes.")
+
+if string1 == string2:
+    print("As duas strings possuem o mesmo conteúdo.")
+else:
+    print("As duas strings possuem conteúdos diferentes.")
+
+# Exercício 2: Nome ao contrário em maiúsculas
+nome = input("Digite o seu nome: ")
+nome_invertido = nome[::-1].upper()
+print(f"Nome invertido: {nome_invertido}")
+
+# Exercício 3: Nome na vertical
+nome3 = input("Digite o seu nome: ")
+for letra in nome3:
+    print(letra)
+
+# Exercício 4: Nome em escada
+nome4 = input("Digite o seu nome: ")
+for i in range(len(nome4) + 1):
+    print(nome4[:i]) # Vai imprimindo do começo até a posição 'i'
+
+# Exercício 5: Escada invertida
+nome5 = input("Digite o seu nome: ")
+for i in range(len(nome5), 0, -1):
+    print(nome5[:i])
+
+# Exercício 6: Data por extenso
+data = input("Digite uma data (dd/mm/aaaa): ")
+dia, mes_num, ano = data.split('/') # Separa a string numa lista onde tem '/'
+
+meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", 
+         "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+
+mes_extenso = meses[int(mes_num) - 1] # -1 porque as listas começam no zero!
+print(f"{dia} de {mes_extenso} de {ano}")
+
+# Exercício 7: Contar espaços e vogais
+frase = input("Digite uma frase: ").lower()
+espacos = frase.count(' ')
+vogais = 0
+for letra in frase:
+    if letra in 'aeiouáéíóúâêîôûãõ':
+        vogais += 1
+print(f"Espaços: {espacos} | Vogais: {vogais}")
+
+# Exercício 8: Palíndromo
+texto = input("Digite uma palavra ou frase: ").lower().replace(" ", "")
+if texto == texto[::-1]:
+    print("É um palíndromo!")
+else:
+    print("Não é um palíndromo.")
+
+# Exercício 9: Verificação de CPF
+cpf_digitado = input("Digite o CPF (xxx.xxx.xxx-xx): ")
+cpf_limpo = cpf_digitado.replace('.', '').replace('-', '')
+
+if len(cpf_limpo) == 11:
+    # Esta parte matemática tive que pedir ajuda à internet!
+    soma1 = sum(int(cpf_limpo[i]) * (10 - i) for i in range(9))
+    digito1 = 11 - (soma1 % 11)
+    if digito1 > 9: digito1 = 0
+    
+    soma2 = sum(int(cpf_limpo[i]) * (11 - i) for i in range(10))
+    digito2 = 11 - (soma2 % 11)
+    if digito2 > 9: digito2 = 0
+    
+    if str(digito1) == cpf_limpo[9] and str(digito2) == cpf_limpo[10]:
+        print("CPF Válido!")
+    else:
+        print("CPF Inválido (dígitos não conferem).")
+else:
+    print("Formato inválido.")
+
+# Exercício 10: Número por extenso
+unidades = ["Zero", "Um", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", 
+            "Dez", "Onze", "Doze", "Treze", "Catorze", "Quinze", "Dezasseis", "Dezassete", "Dezoito", "Dezanove"]
+dezenas = ["", "", "Vinte", "Trinta", "Quarenta", "Cinquenta", "Sessenta", "Setenta", "Oitenta", "Noventa"]
+
+num = int(input("Digite um número (0 a 99): "))
+if num < 20:
+    print(unidades[num])
+else:
+    dezena = num // 10
+    unidade = num % 10
+    if unidade == 0:
+        print(dezenas[dezena])
+    else:
+        print(f"{dezenas[dezena]} e {unidades[unidade].lower()}")
+
+# Exercício 11: Jogo da Forca
+palavras = ["python", "programacao", "computador", "teclado"]
+palavra_secreta = random.choice(palavras)
+letras_acertadas = ["_"] * len(palavra_secreta)
+tentativas = 6
+
+print("Bem-vindo ao Jogo da Forca!")
+while tentativas > 0 and "_" in letras_acertadas:
+    print(" ".join(letras_acertadas))
+    chute = input("Digite uma letra: ").lower()
+    
+    if chute in palavra_secreta:
+        for i in range(len(palavra_secreta)):
+            if palavra_secreta[i] == chute:
+                letras_acertadas[i] = chute
+    else:
+        tentativas -= 1
+        print(f"Errou! Você tem {tentativas} tentativas restantes.")
+
+if "_" not in letras_acertadas:
+    print(f"Parabéns! A palavra era {palavra_secreta}.")
+else:
+    print(f"Fim de jogo. A palavra era {palavra_secreta}.")
+
+# Exercício 12: Corrigir telefone
+telefone = input("Digite o telefone (sem formatação): ")
+if len(telefone) == 7:
+    telefone_corrigido = "3" + telefone
+    print(f"Telefone corrigido (8 dígitos): {telefone_corrigido}")
+elif len(telefone) == 8:
+    print(f"O telefone já tem 8 dígitos: {telefone}")
+else:
+    print("Tamanho de telefone inválido.")
+
+# Exercício 13: Palavra embaralhada
+palavra = random.choice(["algoritmo", "variavel", "funcao"])
+palavra_misturada = "".join(random.sample(palavra, len(palavra))) 
+
+print(f"Adivinhe a palavra: {palavra_misturada.upper()}")
+resposta = input("Qual é a palavra correta? ").lower()
+
+if resposta == palavra:
+    print("Você acertou! 🎉")
+else:
+    print(f"Você errou! A palavra era {palavra}.")
+
+# Exercício 14: Leet Speak
+texto_normal = input("Digite um texto para virar Hacker (Leet): ").lower()
+texto_leet = texto_normal.replace('a', '4').replace('e', '3').replace('i', '1').replace('o', '0').replace('t', '7').replace('s', '5')
+print(f"Leet Speak: {texto_leet}")
