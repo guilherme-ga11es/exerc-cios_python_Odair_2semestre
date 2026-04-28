@@ -1,0 +1,120 @@
+#Basico
+
+#1. Olá Nome:
+def saudacao(nome):
+    print(f"Olá, {nome}!")
+saudacao("Maria")
+
+#2. Área do Retângulo:
+def calcular_area(base, altura):
+    return base * altura
+print(calcular_area(5, 3))
+
+#3. Maior de Dois:
+def maior_valor(a, b):
+    if a > b:
+        return a
+    else:
+        return b
+print(maior_valor(10, 7))
+
+#4. Par ou Ímpar:
+def verificar_par(numero):
+    return numero % 2 == 0
+print(verificar_par(4))
+print(verificar_par(7))
+
+#5. Média Simples:
+def calcular_media_simples(nota1, nota2, nota3):
+    return (nota1 + nota2 + nota3) / 3
+print(calcular_media_simples(7, 8, 9))
+
+#Intermediario
+
+#1. Calculadora de Média de Lista:
+def calcular_media(notas):
+    return sum(notas) / len(notas)
+print(calcular_media([7, 8, 9, 10]))
+
+#2. Conversor de Temperatura:
+def celsius_para_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+print(celsius_para_fahrenheit(100))
+print(celsius_para_fahrenheit(0))
+
+#3. Contador de Vogais:
+def contar_vogais(texto):
+    vogais = "aeiouAEIOU"
+    contador = 0
+    for letra in texto:
+        if letra in vogais:
+            contador += 1
+    return contador
+print(contar_vogais("Python"))
+print(contar_vogais("Abacaxi"))
+
+#4. Fatorial:
+def fatorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * fatorial(n - 1)
+
+print(fatorial(5))
+print(fatorial(0))
+
+#5. Inverter String:
+def inverter_string(frase):
+    return frase[::-1]
+print(inverter_string("python"))
+print(inverter_string("abcd"))
+
+#Avançado
+
+#1. Validação de Entrada (leiaInt):
+def leiaInt(mensagem="Digite um número inteiro: "):
+    while True:
+        entrada = input(mensagem)
+        try:
+            return int(entrada)
+        except ValueError:
+            print("Valor inválido! Digite apenas números inteiros.")
+numero = leiaInt()
+print(f"Você digitou: {numero}")
+
+#2. Função com Argumentos Opcionais:
+def configurar_perfil(nome, idade, cidade="Desconhecida"):
+    print(f"Nome: {nome}")
+    print(f"Idade: {idade}")
+    print(f"Cidade: {cidade}")
+configurar_perfil("Ana", 25)
+configurar_perfil("Carlos", 30, "Recife")
+
+#3. Recursão (Fibonacci):
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+print(fibonacci(6))
+print(fibonacci(10))
+
+#4. Escopo de Variáveis:
+variavel_global = "Sou global"
+def demonstrar_escopo():
+    variavel_local = "Sou local"
+    print(variavel_global)
+    print(variavel_local)
+demonstrar_escopo()
+print(variavel_global)
+
+#5. Processamento de Lista com Dicionário:
+def produto_mais_caro(produtos):
+    return max(produtos, key=lambda p: p["preco"])
+lista = [
+    {"nome": "Notebook", "preco": 3500.00},
+    {"nome": "Mouse",    "preco": 150.00},
+    {"nome": "Monitor",  "preco": 1200.00}
+]
+mais_caro = produto_mais_caro(lista)
+print(f"Produto mais caro: {mais_caro['nome']} — R$ {mais_caro['preco']:.2f}")
